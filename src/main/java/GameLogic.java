@@ -13,6 +13,7 @@ import java.util.List;
 public class GameLogic {
 
 
+
     private final List<String> words;
 
     /**
@@ -31,13 +32,9 @@ public class GameLogic {
 
 
     {
-        try {
-            //words = Files.readAllLines(Paths.get("src/main/resources/dictionary_en.txt")); Uncomment the line to use the English dictionary
-            words = Files.readAllLines(Paths.get("src/main/resources/dictionary_ru.txt"));
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Dictionary dictionary = new Dictionary();
+        dictionary.initDictionary("ru"); // paste "en" instead "ru", if you want use english words
+        words = dictionary.getWords();
     }
 
 
@@ -68,7 +65,7 @@ public class GameLogic {
             System.err.println("Such word hasn't in dictionary ");
             return;
         }
-        if (answer.equals(guessList)) {
+        if (guessWord.equalsIgnoreCase(rightAnswer)) {
             System.err.println("Word " + guessWord.toUpperCase() + " that right answer congratulation!!!");
             System.exit(0);
             return;
