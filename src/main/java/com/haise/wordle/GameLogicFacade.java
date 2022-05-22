@@ -1,3 +1,10 @@
+package com.haise.wordle;
+
+import com.haise.wordle.DictionaryWork.*;
+import com.haise.wordle.Logic.*;
+import com.haise.wordle.WorkWithAnswerAndGuess.IPuzzler;
+import com.haise.wordle.WorkWithAnswerAndGuess.Puzzler;
+
 import java.util.List;
 
 public class GameLogicFacade implements IGameLogicFacade{

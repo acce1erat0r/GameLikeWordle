@@ -1,3 +1,8 @@
+package com.haise.wordle.Logic;
+
+import com.haise.wordle.ConstantsString;
+import com.haise.wordle.DictionaryWork.DataLetters;
+
 public class WordConstructor implements IWordConstructor{
 
 

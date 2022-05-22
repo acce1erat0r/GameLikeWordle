@@ -1,6 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+package com.haise.wordle.WorkWithAnswerAndGuess;
+
 import java.util.Scanner;
 
 public class WordWriter implements IWriter {

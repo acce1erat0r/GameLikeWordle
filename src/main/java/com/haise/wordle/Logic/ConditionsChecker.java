@@ -1,3 +1,5 @@
+package com.haise.wordle.Logic;
+
 import java.util.List;
 
 public class ConditionsChecker implements IConditions{

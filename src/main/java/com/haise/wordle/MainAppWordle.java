@@ -1,3 +1,5 @@
+package com.haise.wordle;
+
 /**
  * Класс Main
  */

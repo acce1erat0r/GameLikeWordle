@@ -1,3 +1,5 @@
+package com.haise.wordle;
+
 public enum ConstantsString {
     PATH_RU("src/main/resources/dictionary_ru.txt"),
     PATH_EN("src/main/resources/dictionary_en.txt"),

@@ -1,3 +1,5 @@
+package com.haise.wordle.DictionaryWork;
+
 import java.util.HashMap;
 
 public class DataLetters {
