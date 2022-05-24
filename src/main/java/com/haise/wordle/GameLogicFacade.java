@@ -2,17 +2,20 @@ package com.haise.wordle;
 
 import com.haise.wordle.DictionaryWork.*;
 import com.haise.wordle.Logic.*;
-import com.haise.wordle.WorkWithAnswerAndGuess.IPuzzler;
-import com.haise.wordle.WorkWithAnswerAndGuess.Puzzler;
-
-import java.util.List;
+import com.haise.wordle.constants.ConstantsString;
+import com.haise.wordle.interfaces.IFinderInDict;
+import com.haise.wordle.interfaces.IPuzzler;
 
 public class GameLogicFacade implements IGameLogicFacade{
-    private final IDictReader dictReader = new DictionaryReader();
-    private final List<String> dictionary = dictReader.read(ConstantsString.PATH_RU.getTitle());
+    private final IFinderInDict dictReader = new DictionaryWorker();
+    private final IPuzzler puzzler = new DictionaryWorker();
 
-    IPuzzler puzzler = new Puzzler();
-    String answer = puzzler.riddleWord(dictionary);
+
+
+
+
+
+    String answer =  puzzler.riddleWord(ConstantsString.PATH_EN.getTitle());
     private final IDataFactory dataFactory = new DataFactory();
     private final IWordConstructor constructor = new WordConstructor();
     private final IDataFill filler = new DataFiller();
@@ -22,14 +25,18 @@ public class GameLogicFacade implements IGameLogicFacade{
 
     @Override
     public StringBuilder checkWord(String userGuess) {
+
+        System.out.println(answer);
         if (conditions.isWin(userGuess, answer)){
             System.out.println(ConstantsString.WIN_CONDITION.getTitle());
             System.exit(0);
         }
-        if (!conditions.isContains(dictionary,userGuess)){
+        //TODO: тут нужен какой-либо сигнал для мейн цикла о том, чтобы перейти на некс итерацию, да и сообщения для юзера лучше вывести в отдельный класс
+        if (!dictReader.find( ConstantsString.PATH_EN.getTitle(), userGuess)){
             System.out.println(ConstantsString.NOT_CONTAINS_IN_DICT.getTitle());
-            return new StringBuilder();
+
         }
+
 
         DataLetters data = dataFactory.createData();
         filler.fillData(data, userGuess, answer);
