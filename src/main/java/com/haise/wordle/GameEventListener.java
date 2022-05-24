@@ -8,34 +8,56 @@ import java.util.List;
 
 public class GameEventListener {
     private final List<IObserver> observers = new ArrayList<>();
-    public void addListener(IObserver observer){
+
+    /**
+     * @param observer - объект имплементирующий интерфейс observer
+     */
+    public void addListener(IObserver observer) {
         observers.add(observer);
     }
-    public void removeObserver(IObserver observer){
+
+    /**
+     * @param observer - объект имплементирующий интерфейс observer
+     */
+    public void removeObserver(IObserver observer) {
         observers.remove(observer);
     }
 
-    public void fireEvent(ViewMessage message){
-        for(IObserver observer : observers){
+    /**
+     * @param message - enum ViewMessage
+     */
+    public void fireEvent(ViewMessage message) {
+        for (IObserver observer : observers) {
             observer.execute(message);
         }
     }
-    public void fireEvent(List<StringBuilder> trys){
-        for(IObserver observer : observers){
+
+    /**
+     * @param  trys - список StringBuilder, каждый из которых являетмя хранилищем для пользовательских попыток ввода
+     */
+    public void fireEvent(List<StringBuilder> trys) {
+        for (IObserver observer : observers) {
             observer.execute(trys);
         }
     }
-    public void fireEvent(Game game){
-       for (IObserver observer: observers){
-           observer.execute(game);
-       }
-    }
-    public void fireEvent(String answer){
-        for (IObserver observer: observers){
-            observer.execute(answer);
+
+    /**
+     * @param  game - объект класса Game
+     */
+    public void fireEvent(Game game) {
+        for (IObserver observer : observers) {
+            observer.execute(game);
         }
     }
 
+    /**
+     * @param answer - загаданное слово
+     */
+    public void fireEvent(String answer) {
+        for (IObserver observer : observers) {
+            observer.execute(answer);
+        }
+    }
 
 
 }

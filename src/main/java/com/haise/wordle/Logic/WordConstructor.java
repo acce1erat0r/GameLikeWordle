@@ -7,7 +7,12 @@ import com.haise.wordle.interfaces.IWordConstructor;
 public class WordConstructor implements IWordConstructor {
 
 
-
+    /**
+     * @param dataLetters - объект класса dataLetters, содержащий три hashmap,
+     *                    в каждой из которых хранятся буквы определенного цвета
+     * @return возвращает слово собранное из символов всех трех хэшмап.
+     * Таким образом каждый символ будет иметь соответствующий цвет.
+     */
     @Override
     public StringBuilder constructWord(DataLetters dataLetters) {
         StringBuilder userWordle = new StringBuilder();

@@ -14,6 +14,11 @@ public class GameLogicFacade implements IGameLogicFacade {
     private final IDataFill filler = new DataFiller();
 
 
+    /**
+     * @param userGuess - введенное пользователем слово
+     * @param  listener - класс - слушатель событий, происходящих в классах реализующих интерфейс IObserver
+     * @param answer - загаданное слово
+     */
     @Override
     public StringBuilder checkWord(String userGuess, GameEventListener listener, String answer) {
         if (userGuess.equalsIgnoreCase(answer)) {

@@ -6,10 +6,22 @@ import com.haise.wordle.constants.ViewMessage;
 import java.util.List;
 
 public interface IObserver {
+    /**
+     * @param message enum ViewMessage
+     */
     void execute(ViewMessage message);
-    void execute (List<StringBuilder> list);
+    /**
+     * @param  trys  список StringBuilder, каждый из которых являетмя хранилищем для пользовательских попыток ввода
+     */
+    void execute (List<StringBuilder> trys);
 
+    /**
+     * @param  game  объект класса Game
+     */
     void  execute(Game game);
+    /**
+     * @param answer загаданное слово
+     */
     void execute (String answer);
 
 }

@@ -4,6 +4,9 @@ import com.haise.wordle.constants.ConstantsString;
 import com.haise.wordle.DictionaryWork.DataLetters;
 import com.haise.wordle.interfaces.IDataFill;
 
+/**
+ * Класс отвественный за заполнение объекта класса DataLetters
+ */
 public class DataFiller implements IDataFill {
 
     private void fillGreenLetters(DataLetters data, String userGuess, String answer) {
@@ -26,7 +29,7 @@ public class DataFiller implements IDataFill {
         }
     }
 
-    //TODO: повторяющиеся буквы РЕФАКТОР!
+    //TODO: повторяющиеся буквы выделяются цветом, даже если буква в ответе одна, пофиксить
     private void fillYellowLetters(DataLetters data, String userGuess, String answer) {
         for (int i = 0; i < 5; i++) {
             if (userGuess.charAt(i) != answer.charAt(i)) {
@@ -35,11 +38,17 @@ public class DataFiller implements IDataFill {
                             i, ConstantsString.ANSI_YELLOW.getTitle()
                                     + userGuess.charAt(i));
                 }
-
             }
         }
     }
 
+    /**
+     * @param data - объект класса dataLetters, содержащий три hashmap,
+     *                    в каждой из которых хранятся буквы определенного цвета, userGuess
+     * @param userGuess - слово введенное пользователем
+     * @param answer - загаданное слово
+     *
+     */
     @Override
     public void fillData(DataLetters data, String userGuess, String answer) {
         fillGrayLetters(data, userGuess, answer);

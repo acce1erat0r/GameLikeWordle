@@ -9,7 +9,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
+/**
+ * Класс ответственный за работу с файлами словарей
+ */
 public class DictionaryWorker implements IFinderInDict, IPuzzler {
+    /**
+     * @param path (string)  путь к файлу со словарем
+     * @param userWord - слово введенное пользователем
+     * @return возвращает true, если userWord содержится в словаре по пути path
+     * Ответственен за проверку: есть ли введенное пользователем слово в файле
+     */
     @Override
     public boolean find(String path, String userWord) {
         try {
@@ -20,6 +29,11 @@ public class DictionaryWorker implements IFinderInDict, IPuzzler {
         }
     }
 
+    /**
+     * @param  path  (string)  путь к файлу со словарем
+     * @return answer (string) рандомно выбранное из словаря слово
+     * Отвественностью данного метода является: рандомно выбрать слово из файла и отдать его программе
+     */
     @Override
     public String riddleWord(String path) {
         try {

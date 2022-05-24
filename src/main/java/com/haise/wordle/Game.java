@@ -8,20 +8,20 @@ import com.haise.wordle.interfaces.IGameLogicFacade;
 import com.haise.wordle.interfaces.IPuzzler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Game implements IGame {
     private  final IGameLogicFacade gameLogicFacade = new GameLogicFacade();
     private final GameEventListener listener  = new GameEventListener();
     private String userGuess;
+    public void setUserGuess(String userGuess) {
+        this.userGuess = userGuess;
+    }
     private final IPuzzler puzzler = new DictionaryWorker();
 
     private final String answer =  puzzler.riddleWord(ConstantsString.PATH_EN.getTitle());
 
-    public void setUserGuess(String userGuess) {
-        this.userGuess = userGuess;
-    }
+
 
     private static int counter = 0;
     private final List<StringBuilder> trys = new ArrayList<>();
