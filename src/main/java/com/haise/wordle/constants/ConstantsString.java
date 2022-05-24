@@ -1,4 +1,4 @@
-package com.haise.wordle;
+package com.haise.wordle.constants;
 
 public enum ConstantsString {
     PATH_RU("src/main/resources/dictionary_ru.txt"),
@@ -12,6 +12,7 @@ public enum ConstantsString {
     ANSI_GREEN ("\u001B[32m"),
     ANSI_YELLOW ("\u001B[33m"),
     ANSI_RED ("\u001B[31m");
+
 
     private final String title;
 

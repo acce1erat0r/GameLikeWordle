@@ -3,6 +3,7 @@ package com.haise.wordle.Logic;
 import java.util.List;
 
 public class ConditionsChecker implements IConditions{
+    // TODO: переработать класс так как нам больше не нужен метод isContains
     @Override
     public boolean isContains(List<String> dictionary, String userWord) {
 
