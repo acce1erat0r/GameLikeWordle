@@ -21,7 +21,7 @@ public class DataFiller implements IDataFill {
             if (!answer.contains(String.valueOf(userGuess.charAt(i)))) {
                 data.getGrayLetters().put(
                         i, ConstantsString.ANSI_RED.getTitle()
-                                + String.valueOf(userGuess.charAt(i)));
+                                + userGuess.charAt(i));
             }
         }
     }
