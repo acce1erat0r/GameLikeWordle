@@ -3,11 +3,14 @@ package com.haise.wordle;
 import com.haise.wordle.WorkWithAnswerAndGuess.IWriter;
 import com.haise.wordle.WorkWithAnswerAndGuess.WordWriter;
 import com.haise.wordle.constants.ConstantsString;
+import com.haise.wordle.interfaces.IGame;
+import com.haise.wordle.interfaces.IGameLogicFacade;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game implements IGame{
+public class Game implements IGame {
+    //TODO:Отделить логику от вью. Создать класс который будет предавать сигналы с логической стороны вьюшке и наоборот
 
     private final IWriter writer = new WordWriter();
     IGameLogicFacade gameLogicFacade = new GameLogicFacade();
@@ -26,6 +29,5 @@ public class Game implements IGame{
         }
         System.out.println(ConstantsString.LOSE_MESSAGE.getTitle());
         //TODO: добавить вывод загаданного слова, если игрок проиграл
-
     }
 }
