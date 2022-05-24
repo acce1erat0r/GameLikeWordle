@@ -1,4 +1,4 @@
-package com.haise.wordle.Logic;
+package com.haise.wordle.interfaces;
 
 import com.haise.wordle.DictionaryWork.DataLetters;
 
