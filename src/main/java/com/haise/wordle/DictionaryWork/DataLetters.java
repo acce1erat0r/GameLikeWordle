@@ -8,10 +8,6 @@ public class DataLetters {
     private final HashMap<Integer, String> grayLetters = new HashMap<>();
 
 
-
-
-
-
     public HashMap<Integer, String> getGreenLetters() {
         return greenLetters;
     }

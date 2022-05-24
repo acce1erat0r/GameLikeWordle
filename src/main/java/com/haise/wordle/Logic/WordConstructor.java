@@ -1,9 +1,10 @@
 package com.haise.wordle.Logic;
 
-import com.haise.wordle.ConstantsString;
+import com.haise.wordle.constants.ConstantsString;
 import com.haise.wordle.DictionaryWork.DataLetters;
+import com.haise.wordle.interfaces.IWordConstructor;
 
-public class WordConstructor implements IWordConstructor{
+public class WordConstructor implements IWordConstructor {
 
 
 
