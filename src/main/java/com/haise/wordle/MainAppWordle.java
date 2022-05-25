@@ -1,6 +1,6 @@
 package com.haise.wordle;
 
-import com.haise.wordle.interfaces.IGame;
+import com.haise.wordle.interfaces.Playable;
 
 /**
  * Класс Main
@@ -8,8 +8,8 @@ import com.haise.wordle.interfaces.IGame;
 public class MainAppWordle  {
 
     public static void main(String[] args) {
-       IGame game = new Game();
-       game.goGame();
+       Playable playable = new Game();
+       playable.goGame();
 
     }
 }

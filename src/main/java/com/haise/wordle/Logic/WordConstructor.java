@@ -2,12 +2,20 @@ package com.haise.wordle.Logic;
 
 import com.haise.wordle.constants.ConstantsString;
 import com.haise.wordle.DictionaryWork.DataLetters;
-import com.haise.wordle.interfaces.IWordConstructor;
+import com.haise.wordle.interfaces.WordBuildable;
 
-public class WordConstructor implements IWordConstructor {
+/**
+ * Класс конструктор, реализующий логику сборки слова на основе полей класса DataLetters
+ */
+public class WordConstructor implements WordBuildable {
 
 
-
+    /**
+     * @param dataLetters - объект класса dataLetters, содержащий три hashmap,
+     *                    в каждой из которых хранятся буквы определенного цвета
+     * @return возвращает StringBuilder  собранный из символов всех трех хэшмап.
+     * Данный метод ответственен за сборку результирующего слова из полей класса DataLetters
+     */
     @Override
     public StringBuilder constructWord(DataLetters dataLetters) {
         StringBuilder userWordle = new StringBuilder();
