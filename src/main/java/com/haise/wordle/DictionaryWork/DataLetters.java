@@ -2,6 +2,7 @@ package com.haise.wordle.DictionaryWork;
 
 import java.util.HashMap;
 
+
 public class DataLetters {
     private final HashMap<Integer, String> greenLetters = new HashMap<>();
     private final HashMap<Integer, String> yellowLetters = new HashMap<>();
