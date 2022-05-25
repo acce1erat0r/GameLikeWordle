@@ -2,12 +2,12 @@ package com.haise.wordle.Logic;
 
 import com.haise.wordle.constants.ConstantsString;
 import com.haise.wordle.DictionaryWork.DataLetters;
-import com.haise.wordle.interfaces.IDataFill;
+import com.haise.wordle.interfaces.DataFillable;
 
 /**
  * Класс отвественный за заполнение объекта класса DataLetters
  */
-public class DataFiller implements IDataFill {
+public class DataFiller implements DataFillable {
 
     private void fillGreenLetters(DataLetters data, String userGuess, String answer) {
         for (int i = 0; i < 5; i++) {
@@ -43,11 +43,11 @@ public class DataFiller implements IDataFill {
     }
 
     /**
-     * @param data - объект класса dataLetters, содержащий три hashmap,
+     * @param data  объект класса dataLetters, содержащий три hashmap,
      *                    в каждой из которых хранятся буквы определенного цвета, userGuess
-     * @param userGuess - слово введенное пользователем
-     * @param answer - загаданное слово
-     *
+     * @param userGuess  слово введенное пользователем
+     * @param answer  загаданное слово
+     * Метод ответственен за заполнение полей класса DataLetters
      */
     @Override
     public void fillData(DataLetters data, String userGuess, String answer) {
