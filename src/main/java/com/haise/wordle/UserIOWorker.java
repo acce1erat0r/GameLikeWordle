@@ -23,6 +23,7 @@ public class UserIOWorker implements Observer {
             case NOT_CONTAINS_IN_DICT -> System.out.println(ViewMessage.NOT_CONTAINS_IN_DICT.getMessage());
             case WRITE_WORD -> System.out.println(ViewMessage.WRITE_WORD.getMessage());
             case WIN_CONDITION -> System.out.println(ViewMessage.WIN_CONDITION.getMessage());
+            case SHORT_WORD -> System.out.println(ViewMessage.SHORT_WORD.getMessage());
         }
     }
 
@@ -41,11 +42,16 @@ public class UserIOWorker implements Observer {
      *               Метод обработчик событий, ответственный за пользовательский ввод
      */
     @Override
-    public void execute(Game game) {
+    public void execute(com.haise.wordle.Game game) {
         Scanner sc = new Scanner(System.in);
-        game.setUserGuess(sc.nextLine());
+        String userWord = sc.nextLine();
+        if (userWord.length() < 5){
+            execute(ViewMessage.SHORT_WORD);
+            execute(ViewMessage.WRITE_WORD);
+            execute(game);
+        }
+        game.setUserGuess(userWord);
     }
-
     /**
      * @param answer загаданное слово
      *               Метод обработчик событий, ответственный за вывод на консоль загаданного в программе слова

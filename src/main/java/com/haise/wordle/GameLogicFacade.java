@@ -31,7 +31,7 @@ public class GameLogicFacade implements com.haise.wordle.interfaces.GameLogicFac
         if (userGuess.equalsIgnoreCase(answer)) {
             listener.fireEvent(ViewMessage.WIN_CONDITION);
         }
-        if (!dictReader.find(ConstantsString.PATH_RU.getTitle(), userGuess)) {
+        if (!dictReader.find(ConstantsString.PATH_EN.getTitle(), userGuess)) {
             listener.fireEvent(ViewMessage.NOT_CONTAINS_IN_DICT);
             return new StringBuilder();
         }
